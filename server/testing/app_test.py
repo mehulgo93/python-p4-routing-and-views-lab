@@ -42,7 +42,7 @@ class TestApp:
     def test_count_range_10(self):
         '''counts through range of parameter in "/count/<parameter" on separate lines.'''
         response = app.test_client().get('/count/10')
-        count = '0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n'
+        count = '0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10'
         assert(response.data.decode() == count)
 
     def test_math_route(self):
@@ -61,7 +61,7 @@ class TestApp:
         assert(response.data.decode() == '0')
 
     def test_math_multiply(self):
-        '''multiplies parameters in "/math/" resource when operation is "*".'''
+        '''multiplies pardameters in "/math/" resource when operation is "*".'''
         response = app.test_client().get('/math/5/*/5')
         assert(response.data.decode() == '25')
 
